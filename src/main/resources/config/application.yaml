@@ -1,6 +1,16 @@
 jsonPlaceholder:
   host: https://jsonplaceholder.typicode.com
 
+logging:
+  config: classpath:logback-spring.xml
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
 rest.client.http.max.connections: 50
 rest.client.http.max.connections.per.route: 5
 rest.client.http.request.timeout: 30000
