@@ -46,6 +46,7 @@ public class CacheConfig {
         Cache<Long, Post> postCache = cacheManager.getCache(cacheName);
         if (postCache == null) {
             cacheManager.createCache(cacheName, jCachePostConfiguration).registerCacheEntryListener(listenerConfiguration);
+            cacheManager.enableStatistics(cacheName, Boolean.TRUE);
         }
     }
 
