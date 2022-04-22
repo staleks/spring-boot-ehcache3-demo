@@ -25,12 +25,9 @@ public class JSONPlaceholderPostGateway implements PostGateway {
 
     @Override
     public Post fetchSinglePost(final Long postId) {
-        log.debug("Fetch SinglePost: {}", postId);
+        log.info("JSONPlaceholderPostGateway - fetchSinglePost: {}", postId);
         try {
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-            URI uri = new URI(jsonPlaceholderHost + "/posts" + postId);
+            URI uri = new URI(jsonPlaceholderHost + "/posts/" + postId);
             return restTemplate.getForObject(uri, JSONPlaceholderPost.class);
         } catch(URISyntaxException | RestClientException ex) {
             // throw some custom application ex.

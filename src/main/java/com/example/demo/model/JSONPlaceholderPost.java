@@ -3,8 +3,10 @@ package com.example.demo.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Setter;
+import lombok.ToString;
 
 @Setter
+@ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JSONPlaceholderPost implements Post {
 
