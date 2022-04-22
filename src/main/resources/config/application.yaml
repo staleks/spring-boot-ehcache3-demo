@@ -1,0 +1,9 @@
+jsonPlaceholder:
+  host: https://jsonplaceholder.typicode.com
+
+rest.client.http.max.connections: 50
+rest.client.http.max.connections.per.route: 5
+rest.client.http.request.timeout: 30000
+rest.client.http.connection.timeout: 30000
+rest.client.http.socket.timeout: 30000
+
